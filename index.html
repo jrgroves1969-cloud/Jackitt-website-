@@ -45,14 +45,22 @@
       gap:20px;
       flex-wrap:wrap;
     }
-    .brand{display:flex;flex-direction:column}
+    .brand{
+      display:flex;
+      flex-direction:column;
+      padding:6px 10px 7px;
+      border:2px solid var(--yellow);
+      border-radius:6px;
+      background:#0d0d0d;
+    }
     .logo{
-      font-size:clamp(34px,6vw,58px);
+      font-size:clamp(38px,6.8vw,64px);
       font-weight:950;
       font-style:italic;
-      letter-spacing:-2.5px;
+      letter-spacing:-2.8px;
       line-height:.9;
       color:var(--yellow);
+      text-shadow:0 0 10px rgba(255,212,0,.22);
     }
     .logo span{color:var(--white)}
     .tag{
