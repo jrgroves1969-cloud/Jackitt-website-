@@ -1,70 +1,412 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0a0a0a">
-<meta name="description" content="JACKITT™ — CRAWLER™ development platform. Build to succeed.">
-<title>JACKITT™ | CRAWLER™ Family</title>
-<style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#0a0a0a;color:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.55}
-header{position:sticky;top:0;z-index:10;background:rgba(8,8,8,.96);border-bottom:2px solid #ffd400;padding:16px 6%;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
-.logo{font-size:clamp(30px,6vw,52px);font-weight:900;font-style:italic;letter-spacing:-2px;color:#ffd400}.logo span{color:#fff}.tag{font-size:12px;font-weight:800;letter-spacing:1.6px}
-nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:800}
-.hero{padding:60px 6% 44px;background:linear-gradient(140deg,#1d1d1d,#070707)}.eyebrow{color:#ffd400;font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:13px}
-h1{font-size:clamp(42px,9vw,86px);line-height:1.02;margin:14px 0 18px}h1 span,h2 span{color:#ffd400}.lead{max-width:800px;color:#ddd;font-size:clamp(18px,2.8vw,24px)}
-.hero-image{display:block;width:100%;margin-top:34px;border:2px solid #ffd400;border-radius:10px}
-.note{margin:10px 0 0;color:#aaa;font-size:12px}
-section{padding:52px 6%;max-width:1240px;margin:auto}h2{font-size:clamp(28px,5vw,46px);margin:0 0 18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#181818;border:1px solid #333;border-top:4px solid #ffd400;border-radius:7px;padding:22px}.card h3{color:#ffd400;margin:0 0 10px}.card p{color:#ddd;margin-bottom:0}
-.cta{background:#ffd400;color:#080808;padding:50px 6%;max-width:none}.cta-inner{max-width:1100px;margin:auto}.cta h2{color:#080808}.cta p{color:#181818}
-footer{text-align:center;padding:34px 6%;border-top:1px solid #333;color:#aaa}.strong{color:#ffd400;font-weight:900}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="JACKITT™ — practical lifting and support product development. CRAWLER™ is the current development focus.">
+  <title>JACKITT™ | Build to Succeed</title>
+  <style>
+    :root{
+      --bg:#080808;
+      --panel:#151515;
+      --panel2:#1d1d1d;
+      --line:#4a4a4a;
+      --yellow:#ffd400;
+      --white:#ffffff;
+      --muted:#eeeeee;
+      --soft:#cfcfcf;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--white);
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.65;
+      font-weight:600;
+    }
+    a{color:inherit}
+    .wrap{max-width:1240px;margin:auto}
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(8,8,8,.97);
+      backdrop-filter:blur(8px);
+      border-bottom:4px solid var(--yellow);
+    }
+    .head{
+      padding:15px 5%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex;flex-direction:column}
+    .logo{
+      font-size:clamp(34px,6vw,58px);
+      font-weight:950;
+      font-style:italic;
+      letter-spacing:-2.5px;
+      line-height:.9;
+      color:var(--yellow);
+    }
+    .logo span{color:var(--white)}
+    .tag{
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:1.8px;
+      margin-top:7px;
+      color:var(--white);
+    }
+    nav{display:flex;gap:17px;flex-wrap:wrap}
+    nav a{
+      text-decoration:none;
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:.7px;
+      color:var(--white);
+    }
+    nav a:hover{color:var(--yellow)}
+    .hero{
+      padding:72px 5% 52px;
+      background:
+        radial-gradient(circle at 82% 10%,rgba(255,212,0,.11),transparent 34%),
+        linear-gradient(135deg,#202020 0%,#090909 60%);
+    }
+    .eyebrow{
+      color:var(--yellow);
+      font-weight:950;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:13px;
+    }
+    h1{
+      font-size:clamp(46px,9vw,94px);
+      line-height:.98;
+      margin:16px 0 18px;
+      letter-spacing:-2px;
+      font-weight:950;
+    }
+    h1 span,h2 span{color:var(--yellow)}
+    .lead{
+      font-size:clamp(18px,2.6vw,25px);
+      max-width:900px;
+      color:var(--white);
+      font-weight:700;
+    }
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .btn{
+      display:inline-block;
+      padding:14px 20px;
+      border-radius:5px;
+      text-decoration:none;
+      font-weight:950;
+      border:2px solid transparent;
+    }
+    .btn-primary{background:var(--yellow);color:#080808;border-color:var(--yellow)}
+    .btn-secondary{border-color:#777;background:#171717;color:var(--white)}
+    .status{
+      margin-top:28px;
+      display:inline-block;
+      padding:10px 14px;
+      border:2px solid var(--yellow);
+      color:var(--yellow);
+      background:#111;
+      font-weight:950;
+      letter-spacing:.5px;
+    }
+    .hero-image{
+      width:100%;
+      display:block;
+      margin-top:28px;
+      border:4px solid var(--yellow);
+      border-radius:10px;
+      background:#111;
+    }
+    .caption{
+      font-size:13px;
+      color:var(--soft);
+      margin:11px 0 0;
+      font-weight:700;
+    }
+    .bar{
+      background:var(--yellow);
+      color:#090909;
+      padding:17px 5%;
+      font-weight:950;
+      letter-spacing:.8px;
+      border-top:2px solid #111;
+      border-bottom:2px solid #111;
+    }
+    .bar .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    section{padding:58px 5%}
+    section.alt{background:#111}
+    h2{
+      font-size:clamp(29px,5vw,48px);
+      line-height:1.06;
+      margin:0 0 18px;
+      font-weight:950;
+    }
+    .section-lead{
+      max-width:880px;
+      color:var(--white);
+      font-size:18px;
+      margin-bottom:28px;
+      font-weight:700;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
+      gap:18px;
+    }
+    .card{
+      background:var(--panel);
+      border:2px solid var(--line);
+      border-top:6px solid var(--yellow);
+      border-radius:7px;
+      padding:24px;
+    }
+    .card h3{
+      margin:0 0 11px;
+      color:var(--yellow);
+      font-size:20px;
+      font-weight:950;
+    }
+    .card p{
+      margin:0;
+      color:var(--white);
+      font-weight:700;
+    }
+    .family{
+      display:grid;
+      grid-template-columns:1.15fr 1fr 1fr;
+      gap:18px;
+    }
+    .family .card:first-child{
+      background:#1a1a1a;
+      border-color:#555;
+    }
+    .badge{
+      display:inline-block;
+      background:var(--yellow);
+      color:#090909;
+      font-weight:950;
+      font-size:11px;
+      padding:6px 9px;
+      border-radius:999px;
+      margin-bottom:12px;
+      letter-spacing:.8px;
+      border:2px solid var(--yellow);
+    }
+    .badge.future{
+      background:#303030;
+      color:var(--white);
+      border-color:#666;
+    }
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:10px;
+      margin-top:24px;
+    }
+    .step{
+      padding:18px 12px;
+      border:2px solid #4a4a4a;
+      background:#151515;
+      text-align:center;
+      font-weight:950;
+      font-size:13px;
+    }
+    .step strong{
+      display:block;
+      color:var(--yellow);
+      font-size:22px;
+      margin-bottom:5px;
+    }
+    .quote{
+      border-left:8px solid var(--yellow);
+      padding:9px 0 9px 22px;
+      font-size:clamp(20px,3vw,30px);
+      font-weight:950;
+      max-width:980px;
+      color:var(--white);
+    }
+    .connect{
+      background:var(--yellow);
+      color:#090909;
+      border-top:4px solid #111;
+      border-bottom:4px solid #111;
+    }
+    .connect h2{color:#090909}
+    .connect p{
+      color:#111;
+      max-width:920px;
+      font-weight:800;
+    }
+    .connect .btn-dark{
+      display:inline-block;
+      margin-top:10px;
+      padding:13px 18px;
+      background:#090909;
+      color:var(--yellow);
+      border:3px solid #090909;
+      border-radius:5px;
+      text-decoration:none;
+      font-weight:950;
+    }
+    footer{
+      text-align:center;
+      padding:36px 5%;
+      border-top:2px solid #3a3a3a;
+      color:var(--white);
+      font-weight:700;
+    }
+    .strong{color:var(--yellow);font-weight:950}
+    @media(max-width:800px){
+      .family{grid-template-columns:1fr}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      nav{display:none}
+      .hero{padding-top:48px}
+    }
+  </style>
 </head>
 <body>
 <header>
-<div><div class="logo">JACK<span>ITT</span>™</div><div class="tag">STAND ALONE IS THE KEY!!</div></div>
-<nav><a href="#crawler">CRAWLER™</a><a href="#markets">MARKETS</a><a href="#connect">CONNECT</a></nav>
+  <div class="head wrap">
+    <div class="brand">
+      <div class="logo">JACK<span>ITT</span>™</div>
+      <div class="tag">STAND ALONE IS THE KEY!!</div>
+    </div>
+    <nav>
+      <a href="#crawler">CRAWLER™</a>
+      <a href="#family">FAMILY</a>
+      <a href="#markets">MARKETS</a>
+      <a href="#development">DEVELOPMENT</a>
+      <a href="comments.html">COMMENTS</a>
+    </nav>
+  </div>
 </header>
+
 <main>
-<div class="hero">
-<div class="eyebrow">Now in development</div>
-<h1>CRAWLER™ <span>FAMILY</span></h1>
-<p class="lead">Start focused. Prove the foundation. Scale with purpose. JACKITT™ is developing practical lifting and support solutions around real customer needs, disciplined engineering, testing and validation.</p>
-<img class="hero-image" src="crawler-family.jpg" alt="JACKITT CRAWLER Family concept presentation">
-<p class="note">Illustrative development concept only. Final design, capacities, applications and claims remain subject to engineering, testing and validation.</p>
-</div>
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Current development focus · CRAWLER™</div>
+      <h1>BUILD THE <span>RIGHT</span><br>FOUNDATION.</h1>
+      <p class="lead">JACKITT™ is developing practical lifting and support solutions around real customer needs, disciplined engineering, testing, validation and stand-alone commercial value.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#crawler">Explore CRAWLER™</a>
+        <a class="btn btn-secondary" href="comments.html">Comments & Feedback</a>
+      </div>
+      <div class="status">CURRENT DEVELOPMENT FOCUS — CONCEPT / ENGINEERING STAGE</div>
+      <img class="hero-image" src="crawler-family.jpg" alt="JACKITT CRAWLER Family concept presentation">
+      <p class="caption">Illustrative development concept. Final designs, capacities, applications and claims remain subject to engineering, testing and validation.</p>
+    </div>
+  </div>
 
-<section id="crawler">
-<h2>START FOCUSED. <span>PROVE THE FOUNDATION.</span></h2>
-<div class="grid">
-<div class="card"><h3>LIGHT-DUTY CRAWLER™</h3><p>Current development focus for cars, pickups, light/service trucks and trailers. The product must stand on its own through verified need, safe engineering and practical value.</p></div>
-<div class="card"><h3>ENGINEER → PROTOTYPE → TEST</h3><p>Requirements first. Load cases defined before fabrication. Build, test, learn, solve and improve until the evidence supports the next stage.</p></div>
-<div class="card"><h3>FUTURE PATHWAYS</h3><p>Rugged, heavy-duty and industrial opportunities remain future development possibilities only where independent customer need and engineering evidence justify them.</p></div>
-</div>
-</section>
+  <div class="bar">
+    <div class="wrap">
+      <span>START FOCUSED.</span>
+      <span>PROVE THE FOUNDATION.</span>
+      <span>SCALE WITH PURPOSE.</span>
+    </div>
+  </div>
 
-<section id="markets">
-<h2>BUILT FOR <span>REAL-WORLD MARKETS.</span></h2>
-<div class="grid">
-<div class="card"><h3>RETAIL & DISTRIBUTION</h3><p>Future opportunities with automotive retailers, equipment suppliers and distribution partners as the product reaches the appropriate validation stage.</p></div>
-<div class="card"><h3>RENTAL, FLEET & SERVICE</h3><p>Early market conversations can help validate usability, service needs, training burden and commercial fit.</p></div>
-<div class="card"><h3>ENGINEERING & INVESTMENT</h3><p>JACKITT™ is building the engineering, validation and business evidence required for serious development and funding discussions.</p></div>
-</div>
-</section>
+  <section id="crawler">
+    <div class="wrap">
+      <h2>CRAWLER™ — <span>CURRENT DEVELOPMENT FOCUS</span></h2>
+      <p class="section-lead">The first JACKITT™ development focus is a compact light-duty platform for automotive, light vehicle and trailer service applications. The final product must earn its place through verified need, sound engineering, practical operation and real-world validation.</p>
+      <div class="grid">
+        <div class="card"><h3>Needs First</h3><p>Start with the customer problem, operating environment and business case before locking features or scope.</p></div>
+        <div class="card"><h3>Engineering First</h3><p>Define load cases, boundaries, approved support points, stability requirements and mechanical support before fabrication.</p></div>
+        <div class="card"><h3>Practical Operation</h3><p>Simple, understandable operation with durability, serviceability and field usability kept central to the design.</p></div>
+        <div class="card"><h3>Validation Before Claims</h3><p>No performance, safety or market-readiness claims are treated as proven until testing and validation support them.</p></div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>THE JACKITT™ <span>STANDARD</span></h2>
-<p><strong>STAND ALONE IS THE KEY!!</strong> Every product must independently justify its own class through customer need, engineering, safety, usability, validation and commercial potential.</p>
-<p><strong>BUILD TO SUCCEED.</strong> Smart decisions. Wise choices. Right timing.</p>
-</section>
+  <section id="family" class="alt">
+    <div class="wrap">
+      <h2>ONE PLATFORM. <span>THREE DIVISIONS.</span></h2>
+      <p class="section-lead">Each product family must stand on its own. Future products are not built simply to fill a lineup — each must independently justify its class.</p>
+      <div class="family">
+        <div class="card">
+          <div class="badge">CURRENT FOCUS</div>
+          <h3>CRAWLER™</h3>
+          <p>Automotive / Light Vehicle & Trailer Service Class. Cars, pickups, light/service trucks and trailers are the initial development territory.</p>
+        </div>
+        <div class="card">
+          <div class="badge future">FUTURE DEVELOPMENT</div>
+          <h3>BEAVER™</h3>
+          <p>Compact & Small Construction Equipment class. Future scope only where verified customer need, engineering and market evidence justify development.</p>
+        </div>
+        <div class="card">
+          <div class="badge future">FUTURE DEVELOPMENT</div>
+          <h3>HEAVY HORSE™</h3>
+          <p>Heavy Industrial / Mining / Pipeline direction. Applications remain conceptual until independently validated for need, engineering feasibility and commercial value.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="cta" id="connect"><div class="cta-inner">
-<h2>CONNECT WITH JACKITT™</h2>
-<p>We welcome relevant conversations with engineers, manufacturers, rental and fleet operators, retailers, distributors, commercial users and potential investors. Proprietary mechanisms, drawings and dimensions remain protected during development.</p>
-</div></div>
+  <section id="markets">
+    <div class="wrap">
+      <h2>BUILT AROUND <span>REAL-WORLD MARKETS.</span></h2>
+      <p class="section-lead">JACKITT™ is building awareness during development while protecting proprietary details and clearly separating concepts from verified capabilities.</p>
+      <div class="grid">
+        <div class="card"><h3>Retail & Distribution</h3><p>Future opportunities with automotive retailers, equipment suppliers and distribution partners when the product reaches the proper readiness stage.</p></div>
+        <div class="card"><h3>Rental & Fleet</h3><p>Rental companies, fleets and service operations can help validate usability, training burden, maintenance needs and commercial fit.</p></div>
+        <div class="card"><h3>Commercial Users</h3><p>Garages, dealerships, towing, roadside service and other professional users can help define practical requirements.</p></div>
+        <div class="card"><h3>Engineering & Manufacturing</h3><p>Qualified technical and manufacturing partners are essential to disciplined prototype development, testing and production planning.</p></div>
+        <div class="card"><h3>Investors & Funding</h3><p>Development capital follows documented engineering scope, prototype needs, testing, validation and commercialization requirements.</p></div>
+        <div class="card"><h3>Canada First</h3><p>Initial commercial focus is Canada, with Eastern Canada prioritized. Selective U.S. entry can follow when justified.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="development" class="alt">
+    <div class="wrap">
+      <h2>THE JACKITT™ <span>DEVELOPMENT LOOP</span></h2>
+      <p class="section-lead">A disciplined process keeps the project grounded in evidence instead of assumptions.</p>
+      <div class="steps">
+        <div class="step"><strong>1</strong>CONCEPT</div>
+        <div class="step"><strong>2</strong>REQUIREMENTS</div>
+        <div class="step"><strong>3</strong>ENGINEERING</div>
+        <div class="step"><strong>4</strong>PROTOTYPE</div>
+        <div class="step"><strong>5</strong>TEST</div>
+        <div class="step"><strong>6</strong>VALIDATE</div>
+      </div>
+      <div style="height:34px"></div>
+      <div class="quote">“KEEP THE VISION. QUESTION THE METHOD. LOOK OUTSIDE THE BOX. FOLLOW THE EVIDENCE.”</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>THE JACKITT™ <span>STANDARD</span></h2>
+      <div class="grid">
+        <div class="card"><h3>STAND ALONE IS THE KEY!!</h3><p>Every product must independently justify its own class through customer need, engineering, safety, usability, validation and commercial potential.</p></div>
+        <div class="card"><h3>BUILD TO SUCCEED.</h3><p>Do the homework, make smart decisions, assign the right people and build the strongest foundation possible.</p></div>
+        <div class="card"><h3>STAND THE TEST OF TIME!</h3><p>Products, workmanship, safety, reputation and company decisions should remain defensible over the long term.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="connect" id="connect">
+    <div class="wrap">
+      <h2>CONNECT WITH JACKITT™</h2>
+      <p>We welcome relevant conversations with engineers, manufacturers, rental and fleet operators, retailers, distributors, commercial users and potential investors. Proprietary mechanisms, drawings, dimensions and engineering details remain protected during development.</p>
+      <a class="btn-dark" href="comments.html">Leave Comments / Feedback</a>
+    </div>
+  </section>
 </main>
 
-<footer><div class="strong">JACKITT™ — BUILD TO SUCCEED.</div><p>Canada-first development. CRAWLER™ and related visuals shown as development concepts.</p></footer>
+<footer>
+  <div class="strong">JACKITT™ — BUILD TO SUCCEED.</div>
+  <p>Development-stage concepts. No image or statement on this site should be interpreted as a certified capacity, approved engineering drawing, available-for-sale product or validated performance claim.</p>
+</footer>
 </body>
 </html>

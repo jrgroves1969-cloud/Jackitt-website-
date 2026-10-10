@@ -1,77 +1,91 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b0b0b">
-<title>JACKITT™ | Comments & Feedback</title>
-<style>
-:root{--bg:#090909;--panel:#171717;--yellow:#ffd400;--text:#fff;--muted:#c8c8c8;--line:#333}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-header{border-bottom:2px solid var(--yellow);padding:18px 6%;background:#0d0d0d}
-.logo{font-size:42px;font-weight:950;font-style:italic;color:var(--yellow);letter-spacing:-2px}.logo span{color:#fff}
-main{max-width:900px;margin:auto;padding:50px 6%}h1{font-size:clamp(36px,7vw,66px);line-height:1.05;margin:0 0 14px}h1 span{color:var(--yellow)}
-p{color:var(--muted);line-height:1.6}
-form{margin-top:28px;background:var(--panel);padding:24px;border:1px solid var(--line);border-top:4px solid var(--yellow);border-radius:8px}
-label{display:block;font-weight:800;margin:16px 0 7px}
-input,select,textarea{width:100%;padding:13px 14px;border-radius:5px;border:1px solid #555;background:#0f0f0f;color:#fff;font:inherit}
-textarea{min-height:170px;resize:vertical}
-button{margin-top:18px;background:var(--yellow);color:#090909;border:0;border-radius:5px;padding:13px 20px;font-weight:950;font-size:16px;cursor:pointer}
-.back{display:inline-block;margin-top:26px;color:var(--yellow);font-weight:800;text-decoration:none}
-.note{font-size:13px;color:#9a9a9a;margin-top:16px}
-footer{text-align:center;padding:30px 6%;border-top:1px solid #2e2e2e;color:#8f8f8f}
-</style>
-<script>
-function sendFeedback(e){
-  e.preventDefault();
-  const f=e.target;
-  const subject=encodeURIComponent("JACKITT™ Website Feedback - "+f.interest.value);
-  const body=encodeURIComponent(
-    "Name: "+f.name.value+"\n"+
-    "Company/Organization: "+f.company.value+"\n"+
-    "Email: "+f.email.value+"\n"+
-    "Interest: "+f.interest.value+"\n\n"+
-    "Message:\n"+f.message.value
-  );
-  window.location.href="mailto:?subject="+subject+"&body="+body;
-}
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>JACKITT™ | Comments & Feedback</title>
+  <style>
+    :root{--bg:#090909;--panel:#171717;--yellow:#ffd400;--white:#fff;--line:#666}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;font-weight:700;line-height:1.65}
+    header{padding:20px 6%;border-bottom:4px solid var(--yellow);background:#0d0d0d}
+    .logo{font-size:44px;font-weight:950;font-style:italic;color:var(--yellow);letter-spacing:-2px}
+    .logo span{color:#fff}
+    .tag{font-weight:950;letter-spacing:1.2px;margin-top:5px}
+    main{max-width:900px;margin:auto;padding:52px 6%}
+    h1{font-size:clamp(38px,7vw,68px);line-height:1.04;margin:0 0 14px;font-weight:950}
+    h1 span{color:var(--yellow)}
+    p{color:#fff;font-weight:700}
+    form{margin-top:30px;background:var(--panel);padding:26px;border:2px solid #4a4a4a;border-top:6px solid var(--yellow);border-radius:8px}
+    label{display:block;font-weight:950;margin:17px 0 7px;color:#fff}
+    input,select,textarea{width:100%;padding:14px 15px;border-radius:5px;border:3px solid var(--line);background:#0f0f0f;color:#fff;font:inherit;font-weight:800}
+    input:focus,select:focus,textarea:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
+    textarea{min-height:180px;resize:vertical}
+    input::placeholder,textarea::placeholder{color:#efefef;font-weight:700}
+    button{margin-top:20px;background:var(--yellow);color:#090909;border:3px solid var(--yellow);border-radius:5px;padding:14px 22px;font-weight:950;font-size:16px;cursor:pointer}
+    .back{display:inline-block;margin-top:28px;color:var(--yellow);font-weight:950;text-decoration:none}
+    .note{font-size:14px;color:#fff;margin-top:17px;font-weight:700}
+    footer{text-align:center;padding:32px 6%;border-top:2px solid #3a3a3a;color:#fff;font-weight:800}
+  </style>
+  <script>
+    function sendFeedback(e){
+      e.preventDefault();
+      const f=e.target;
+      const subject=encodeURIComponent("JACKITT™ Website Feedback - "+f.interest.value);
+      const body=encodeURIComponent(
+        "Name: "+f.name.value+"\n"+
+        "Company/Organization: "+f.company.value+"\n"+
+        "Email: "+f.email.value+"\n"+
+        "Interest: "+f.interest.value+"\n\n"+
+        "Message:\n"+f.message.value
+      );
+      window.location.href="mailto:?subject="+subject+"&body="+body;
+    }
+  </script>
 </head>
 <body>
-<header><div class="logo">JACK<span>ITT</span>™</div><strong>STAND ALONE IS THE KEY!!</strong></header>
+<header>
+  <div class="logo">JACK<span>ITT</span>™</div>
+  <div class="tag">STAND ALONE IS THE KEY!!</div>
+</header>
+
 <main>
-<h1>COMMENTS & <span>FEEDBACK</span></h1>
-<p>JACKITT™ welcomes useful feedback from industry users, retailers, distributors, rental and fleet operators, engineers, manufacturers and potential investors.</p>
-<form onsubmit="sendFeedback(event)">
-<label for="name">Name</label>
-<input id="name" name="name" required>
+  <h1>COMMENTS & <span>FEEDBACK</span></h1>
+  <p>JACKITT™ welcomes useful feedback from industry users, retailers, distributors, rental and fleet operators, engineers, manufacturers and potential investors.</p>
 
-<label for="company">Company / Organization</label>
-<input id="company" name="company">
+  <form onsubmit="sendFeedback(event)">
+    <label for="name">Name</label>
+    <input id="name" name="name" required>
 
-<label for="email">Email</label>
-<input id="email" name="email" type="email" required>
+    <label for="company">Company / Organization</label>
+    <input id="company" name="company">
 
-<label for="interest">Area of Interest</label>
-<select id="interest" name="interest" required>
-<option value="">Select one</option>
-<option>Buyer / Commercial User</option>
-<option>Retailer</option>
-<option>Distributor</option>
-<option>Rental / Fleet</option>
-<option>Engineering / Manufacturing</option>
-<option>Investor / Funding</option>
-<option>General Feedback</option>
-</select>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required>
 
-<label for="message">Comment / Message</label>
-<textarea id="message" name="message" required></textarea>
+    <label for="interest">Area of Interest</label>
+    <select id="interest" name="interest" required>
+      <option value="">Select one</option>
+      <option>Buyer / Commercial User</option>
+      <option>Retailer</option>
+      <option>Distributor</option>
+      <option>Rental / Fleet</option>
+      <option>Engineering / Manufacturing</option>
+      <option>Investor / Funding</option>
+      <option>General Feedback</option>
+    </select>
 
-<button type="submit">Send Feedback</button>
-<p class="note">For now, this opens the visitor's email app with the form details prepared. A direct private web-form inbox can be connected later without changing the page design.</p>
-</form>
-<a class="back" href="index.html">← Back to JACKITT™ Home</a>
+    <label for="message">Comment / Message</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Send Feedback</button>
+    <p class="note">For now, the button opens the visitor's email app with the form details prepared. A direct private web-form inbox can be connected later without changing this design.</p>
+  </form>
+
+  <a class="back" href="index.html">← Back to JACKITT™ Home</a>
 </main>
+
 <footer>JACKITT™ — BUILD TO SUCCEED.</footer>
 </body>
 </html>
