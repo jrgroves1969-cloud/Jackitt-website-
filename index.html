@@ -78,7 +78,8 @@
       letter-spacing:.7px;
       color:var(--white);
     }
-    nav a:hover{color:var(--yellow)}
+    nav a:hover,nav a:focus-visible{color:var(--yellow)}
+    nav a:focus-visible,.btn:focus-visible{outline:3px solid var(--yellow);outline-offset:4px}
     .hero{
       padding:72px 5% 52px;
       background:
@@ -277,7 +278,8 @@
     @media(max-width:800px){
       .family{grid-template-columns:1fr}
       .steps{grid-template-columns:repeat(2,1fr)}
-      nav{display:none}
+      nav{display:flex;width:100%;gap:8px 16px;padding-top:8px}
+      nav a{font-size:12px;padding:6px 0}
       .hero{padding-top:48px}
     }
   </style>
@@ -289,7 +291,7 @@
       <div class="logo">JACK<span>ITT</span>™</div>
       <div class="tag">STAND ALONE IS THE KEY!!</div>
     </div>
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="#crawler">CRAWLER™</a>
       <a href="#family">FAMILY</a>
       <a href="#markets">MARKETS</a>
