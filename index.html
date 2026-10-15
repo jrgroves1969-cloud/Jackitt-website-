@@ -300,9 +300,18 @@
     .investor-next{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:28px;background:#202020;border:1px solid #555}
     .investor-next h3{font-size:26px;margin:0}.investor-next p{max-width:650px;margin-bottom:0}.investor-next .btn{flex-shrink:0}
     @media(max-width:700px){.investment-grid{grid-template-columns:1fr}.investor-next{flex-direction:column;align-items:stretch}}
+    .skip-link{position:absolute;left:12px;top:-100px;z-index:1000;padding:12px 18px;background:#ffd400;color:#080808;font-weight:700}
+    .skip-link:focus{top:12px}
+    a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #ffd400;outline-offset:5px}
+    .connect a:focus-visible{outline-color:#080808}
+    nav a{display:inline-flex;align-items:center;min-height:44px}
+    img{max-width:100%;height:auto}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @media(max-width:400px){.logo{font-size:38px}.tag{letter-spacing:.8px}form{padding:16px}h1{overflow-wrap:break-word}}
   </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <header>
   <div class="head wrap">
     <div class="brand">
@@ -315,7 +324,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
   <div class="hero"><div class="wrap">
     <div class="eyebrow">JACKITT™ · BUILD TO SUCCEED.</div>
     <h1>THE NEXT CHAPTER<br>IN <span>PRACTICAL LIFTING.</span></h1>

@@ -27,6 +27,14 @@
     .back{display:inline-block;margin-top:28px;color:var(--yellow);font-weight:950;text-decoration:none}
     .note{font-size:14px;color:#fff;margin-top:17px;font-weight:700}
     footer{text-align:center;padding:32px 6%;border-top:2px solid #3a3a3a;color:#fff;font-weight:800}
+    .skip-link{position:absolute;left:12px;top:-100px;z-index:1000;padding:12px 18px;background:#ffd400;color:#080808;font-weight:700}
+    .skip-link:focus{top:12px}
+    a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #ffd400;outline-offset:5px}
+    .connect a:focus-visible{outline-color:#080808}
+    nav a{display:inline-flex;align-items:center;min-height:44px}
+    img{max-width:100%;height:auto}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @media(max-width:400px){.logo{font-size:38px}.tag{letter-spacing:.8px}form{padding:16px}h1{overflow-wrap:break-word}}
   </style>
   <script>
     function sendFeedback(e){
@@ -45,26 +53,27 @@
   </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <header>
   <div class="logo">JACK<span>ITT</span>™</div>
   <div class="tag">BUILD TO SUCCEED.</div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
   <h1>CONTACT <span>US</span></h1>
   <p>Have a service challenge, a partnership idea or an interest in investing? Tell us what brought you to JACKITT™.</p>
 
   <form onsubmit="sendFeedback(event)">
-    <label for="name">Name</label>
-    <input id="name" name="name" required>
+    <label for="name">Name (required)</label>
+    <input id="name" name="name" autocomplete="name" required>
 
     <label for="company">Company / Organization</label>
-    <input id="company" name="company">
+    <input id="company" name="company" autocomplete="organization">
 
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required>
+    <label for="email">Email (required)</label>
+    <input id="email" name="email" type="email" autocomplete="email" required>
 
-    <label for="interest">Area of Interest</label>
+    <label for="interest">Area of Interest (required)</label>
     <select id="interest" name="interest" required>
       <option value="">Select one</option>
       <option>Buyer / Commercial User</option>
@@ -76,7 +85,7 @@
       <option>General Feedback</option>
     </select>
 
-    <label for="message">How can we help?</label><p class="note" id="message-help">Customers: what do you service, what do you use now and what would you improve? Investors and partners: tell us your area of interest. Please leave out confidential technical information.</p>
+    <label for="message">How can we help? (required)</label><p class="note" id="message-help">Customers: what do you service, what do you use now and what would you improve? Investors and partners: tell us your area of interest. Please leave out confidential technical information.</p>
     <textarea id="message" name="message" aria-describedby="message-help" required></textarea>
 
     <button type="submit">Open Email Draft</button>
