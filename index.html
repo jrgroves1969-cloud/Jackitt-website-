@@ -290,6 +290,16 @@
     a:focus-visible{outline:3px solid currentColor;outline-offset:5px}
     @media(max-width:600px){header{position:relative}.head{gap:12px}.hero{padding-top:36px}.grid{grid-template-columns:1fr}.btn{width:100%;text-align:center}section{scroll-margin-top:20px;padding:42px 5%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    .investor-section{background:radial-gradient(ellipse at 100% 0,rgba(255,212,0,.1),transparent 60%),#141414;border-top:1px solid #51471b}
+    .investor-invitation{max-width:760px;font-size:clamp(19px,2.3vw,25px);line-height:1.5;color:var(--yellow)}
+    .investment-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .investment-grid .eyebrow{font-size:11px;color:#c7c7c7}
+    .investment-principle{margin:36px 0;padding:8px 0 8px 24px;border-left:4px solid var(--yellow);max-width:850px}
+    .investment-principle h3{font-size:clamp(23px,4vw,34px);line-height:1.2;margin:10px 0}
+    .investment-principle p,.investor-next p{font-weight:500}
+    .investor-next{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:28px;background:#202020;border:1px solid #555}
+    .investor-next h3{font-size:26px;margin:0}.investor-next p{max-width:650px;margin-bottom:0}.investor-next .btn{flex-shrink:0}
+    @media(max-width:700px){.investment-grid{grid-template-columns:1fr}.investor-next{flex-direction:column;align-items:stretch}}
   </style>
 </head>
 <body>
@@ -337,16 +347,27 @@
     </div>
     <div class="cta-row"><a class="btn btn-primary" href="comments.html?interest=customer">Share Your Needs</a></div>
   </div></section>
-  <section id="investors"><div class="wrap">
+  <section id="investors" class="investor-section"><div class="wrap">
     <div class="eyebrow">For investors &amp; development partners</div>
-    <h2>A FOCUSED BEGINNING.<br><span>A BROADER VISION.</span></h2>
-    <p class="section-lead">JACKITT™ starts with CRAWLER™ Original. Our approach is to establish customer need, develop the first prototype and test the case for commercialization in Canada.</p>
-    <div class="grid">
-      <div class="card"><h3>Where we are</h3><p>Early development. Engineering, prototype development and safety validation remain ahead. No validated capacity or sales-ready product is being presented.</p></div>
-      <div class="card"><h3>What comes next</h3><p>Define customer requirements and engineering scope, establish a development budget, then build and test a prototype against measurable requirements.</p></div>
-      <div class="card"><h3>The conversation</h3><p>Discuss the customer problem, proposed differentiation, development milestones, funding needs and commercial assumptions.</p><a class="text-link" href="comments.html?interest=investor">Start an investor conversation →</a></div>
+    <h2>ONE PRODUCT TO PROVE.<br><span>A VISION TO BUILD.</span></h2>
+    <p class="section-lead">A compelling product begins with a problem worth solving. JACKITT™ is starting with CRAWLER™ Original—a compact lifting and support concept for light vehicle and trailer service.</p>
+    <p class="investor-invitation">The opportunity starts here: understand the need, develop the solution and prove its value in the field.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="#investment-story">Explore the Investment Story ↓</a><a class="btn btn-secondary" href="comments.html?interest=investor">Talk With Us</a></div>
+    <p class="caption">Early development · Customer requirements and engineering scope to be established · Prototype and validation ahead</p>
+  </div></section>
+  <section id="investment-story" class="alt"><div class="wrap">
+    <div class="eyebrow">A closer look at JACKITT™</div>
+    <h2>THE NEED. THE DIFFERENCE.<br><span>THE NEXT MILESTONE.</span></h2>
+    <p class="section-lead">Our starting point is focused. Our long-term ambition is broader. Progress depends on evidence at each step.</p>
+    <div class="grid investment-grid">
+      <div class="card"><div class="eyebrow">01 / The customer</div><h3>Start where the work happens.</h3><p>Garages, light vehicle and trailer service users, and rental and fleet operators are the initial audiences. The first task is to identify which lifting and support challenges matter most—and what customers would pay to solve them.</p></div>
+      <div class="card"><div class="eyebrow">02 / The proposed difference</div><h3>Practical value must be earned.</h3><p>CRAWLER™ Original explores a compact approach with practical positioning, straightforward operation, durability and serviceability as priorities. Comparison with existing equipment must establish where it offers a meaningful advantage.</p></div>
+      <div class="card"><div class="eyebrow">03 / The development path</div><h3>Turn the concept into evidence.</h3><p>Define requirements and load cases. Complete engineering. Build a prototype. Test operation, stability and mechanical support. Assess usability and commercial fit with relevant users.</p></div>
+      <div class="card"><div class="eyebrow">04 / The purpose of capital</div><h3>Fund the next proof point.</h3><p>Potential development funding would support scoped engineering, prototype fabrication, testing and refinement. Funding requirements and milestones must follow a documented scope and budget.</p></div>
     </div>
-    <p class="caption">Future products advance only when customer evidence, engineering feasibility and a sound business case justify them.</p>
+    <div class="investment-principle"><div class="eyebrow">The principle behind the platform</div><h3>STAND ALONE IS THE KEY!!</h3><p>Every product must justify its own customer need and commercial value. CRAWLER™ Original comes first. BEAVER™ and HEAVY HORSE™ remain future directions, advancing only when evidence supports them.</p></div>
+    <div class="investor-next"><div><h3>See where you could fit.</h3><p>Start a conversation about the development plan, proposed milestones and the experience or capital you could bring.</p></div><a class="btn btn-primary" href="comments.html?interest=investor">Discuss the Opportunity →</a></div>
+    <p class="caption">Initial commercial focus: Canada, with Eastern Canada prioritized. Customer demand, product performance, differentiation and commercial viability remain to be validated.</p>
   </div></section>
   <section id="family" class="alt">
     <div class="wrap">
