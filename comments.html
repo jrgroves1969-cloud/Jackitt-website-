@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0a0a0a">
-  <title>JACKITT™ | Comments & Feedback</title>
+  <title>JACKITT™ | Contact Us</title>
   <style>
     :root{--bg:#090909;--panel:#171717;--yellow:#ffd400;--white:#fff;--line:#666}
     *{box-sizing:border-box}
@@ -32,27 +32,27 @@
     function sendFeedback(e){
       e.preventDefault();
       const f=e.target;
-      const subject=encodeURIComponent("JACKITT™ Website Feedback - "+f.interest.value);
+      const subject=encodeURIComponent("JACKITT™ Website Enquiry - "+f.interest.value);
       const body=encodeURIComponent(
-        "Name: "+f.name.value+"\n"+
+        "Name: "+f.elements.namedItem("name").value+"\n"+
         "Company/Organization: "+f.company.value+"\n"+
         "Email: "+f.email.value+"\n"+
         "Interest: "+f.interest.value+"\n\n"+
         "Message:\n"+f.message.value
       );
-      window.location.href="mailto:?subject="+subject+"&body="+body;
+      window.location.href="mailto:info@jackitt.com?subject="+subject+"&body="+body;
     }
   </script>
 </head>
 <body>
 <header>
   <div class="logo">JACK<span>ITT</span>™</div>
-  <div class="tag">STAND ALONE IS THE KEY!!</div>
+  <div class="tag">BUILD TO SUCCEED.</div>
 </header>
 
 <main>
-  <h1>COMMENTS & <span>FEEDBACK</span></h1>
-  <p>JACKITT™ welcomes useful feedback from industry users, retailers, distributors, rental and fleet operators, engineers, manufacturers and potential investors.</p>
+  <h1>CONTACT <span>US</span></h1>
+  <p>Have a service challenge, a partnership idea or an interest in investing? Tell us what brought you to JACKITT™.</p>
 
   <form onsubmit="sendFeedback(event)">
     <label for="name">Name</label>
@@ -76,16 +76,21 @@
       <option>General Feedback</option>
     </select>
 
-    <label for="message">Comment / Message</label>
-    <textarea id="message" name="message" required></textarea>
+    <label for="message">How can we help?</label><p class="note" id="message-help">Customers: what do you service, what do you use now and what would you improve? Investors and partners: tell us your area of interest. Please leave out confidential technical information.</p>
+    <textarea id="message" name="message" aria-describedby="message-help" required></textarea>
 
-    <button type="submit">Send Feedback</button>
-    <p class="note">For now, the button opens the visitor's email app with the form details prepared. A direct private web-form inbox can be connected later without changing this design.</p>
+    <button type="submit">Open Email Draft</button>
+    <p class="note">Your email app will open a draft addressed to info@jackitt.com. Review it and press Send in your email app to deliver your message.</p>
   </form>
 
+  <p>Email us directly: <a href="mailto:info@jackitt.com">info@jackitt.com</a></p>
   <a class="back" href="index.html">← Back to JACKITT™ Home</a>
 </main>
 
 <footer>JACKITT™ — BUILD TO SUCCEED.</footer>
-</body>
+<script>
+const interest = new URLSearchParams(location.search).get('interest');
+if (interest === 'investor') document.getElementById('interest').value = 'Investor / Funding';
+if (interest === 'customer') document.getElementById('interest').value = 'Buyer / Commercial User';
+</script></body>
 </html>
