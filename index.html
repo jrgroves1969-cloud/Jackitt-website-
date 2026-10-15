@@ -129,6 +129,7 @@
       letter-spacing:.5px;
     }
     .hero-image{
+      box-shadow:0 0 0 5px #111,0 0 36px rgba(255,212,0,.27);
       width:100%;
       display:block;
       margin-top:28px;
@@ -287,6 +288,12 @@
     .card p{font-weight:500}.lead,.section-lead{font-weight:500}
     .hero h1{font-size:clamp(38px,6.4vw,78px);line-height:1.04;overflow-wrap:break-word}
     .hero .lead{max-width:760px}.eyebrow{margin-bottom:12px}
+    #customers{border-top:5px solid var(--yellow);border-bottom:5px solid var(--yellow)}
+    #customers .card{background:#202020;border-color:#776b26}
+    #customers .card h3{font-size:22px}
+    #customers .btn-primary{font-size:18px;box-shadow:0 6px 0 #7c6900}
+    #customers .section-lead{max-width:1000px}
+
     a:focus-visible{outline:3px solid currentColor;outline-offset:5px}
     @media(max-width:600px){header{position:relative}.head{gap:12px}.hero{padding-top:36px}.grid{grid-template-columns:1fr}.btn{width:100%;text-align:center}section{scroll-margin-top:20px;padding:42px 5%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -319,7 +326,7 @@
       <div class="tag">BUILD TO SUCCEED.</div>
     </div>
     <nav aria-label="Main navigation">
-      <a href="#crawler">CRAWLER™ ORIGINAL</a><a href="#customers">FOR CUSTOMERS</a><a href="#investors">FOR INVESTORS</a><a href="comments.html">CONTACT US</a>
+      <a href="#crawler">CRAWLER™ ORIGINAL</a><a href="#customers">SHARE YOUR EXPERIENCE</a><a href="#investors">FOR INVESTORS</a><a href="comments.html">CONTACT US</a>
     </nav>
   </div>
 </header>
@@ -348,13 +355,13 @@
   <section id="customers" class="alt"><div class="wrap">
     <div class="eyebrow">For customers &amp; industry partners</div>
     <h2>WHAT WOULD MAKE<br><span>YOUR WORK EASIER?</span></h2>
-    <p class="section-lead">If you service light vehicles or trailers, manage a fleet or supply workshop equipment, we want to understand your day-to-day challenges.</p>
+    <p class="section-lead">Help shape the future of JACKITT™. We are listening to maintenance professionals, fleet operators, rental businesses and light vehicle and trailer service teams. Tell us about real challenges before we decide what to engineer or build.</p>
     <div class="grid">
-      <div class="card"><h3>Garages &amp; service users</h3><p>Tell us what you service, what you use today and where access or setup becomes difficult.</p></div>
-      <div class="card"><h3>Rental &amp; fleet operators</h3><p>Share what matters for positioning, training, maintenance and repeated use.</p></div>
-      <div class="card"><h3>Retailers &amp; distributors</h3><p>Help define customer expectations, buying criteria and support needs for a future market-ready product.</p></div>
+      <div class="card"><h3>Tell us about a recent job</h3><p>What were you servicing? What made lifting, positioning or supporting it difficult? What happened?</p></div>
+      <div class="card"><h3>What do you use today?</h3><p>Which tools or workarounds help now? How much time, downtime or expense does the problem create?</p></div>
+      <div class="card"><h3>What matters most?</h3><p>How often does the problem occur? Who chooses new equipment? What would make a solution worth considering?</p></div>
     </div>
-    <div class="cta-row"><a class="btn btn-primary" href="comments.html?interest=customer">Share Your Needs</a></div>
+    <div class="cta-row"><a class="btn btn-primary" href="comments.html?interest=customer">Share Your Experience</a></div>
   </div></section>
   <section id="investors" class="investor-section"><div class="wrap">
     <div class="eyebrow">For investors &amp; development partners</div>
@@ -405,9 +412,9 @@
   <section id="development" class="alt">
     <div class="wrap">
       <h2>THE JACKITT™ <span>DEVELOPMENT LOOP</span></h2>
-      <p class="section-lead">A disciplined process keeps the project grounded in evidence instead of assumptions.</p>
+      <p class="section-lead">Customer discovery comes first. We will learn from real jobs, existing solutions and buying decisions before committing major resources to engineering or prototypes.</p>
       <div class="steps">
-        <div class="step"><strong>1</strong>CONCEPT</div>
+        <div class="step"><strong>1</strong>DISCOVER</div>
         <div class="step"><strong>2</strong>REQUIREMENTS</div>
         <div class="step"><strong>3</strong>ENGINEERING</div>
         <div class="step"><strong>4</strong>PROTOTYPE</div>
