@@ -40,12 +40,12 @@
     function sendFeedback(e){
       e.preventDefault();
       const f=e.target;
-      const subject=encodeURIComponent("JACKITT™ Website Enquiry - "+f.interest.value);
+      const subject=encodeURIComponent("JACKITT™ Website Enquiry - "+f.elements.namedItem("interest").value);
       const body=encodeURIComponent(
         "Name: "+f.elements.namedItem("name").value+"\n"+
         "Company/Organization: "+f.company.value+"\n"+
         "Email: "+f.email.value+"\n"+
-        "Interest: "+f.interest.value+"\n\n"+
+        "Interest: "+f.elements.namedItem("interest").value+"\n\n"+
         "Message:\n"+f.message.value
       );
       window.location.href="mailto:info@jackitt.com?subject="+subject+"&body="+body;
